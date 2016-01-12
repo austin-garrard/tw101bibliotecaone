@@ -10,26 +10,27 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
-/**
- * Created by adobley on 1/12/16.
- */
 public class LibraryTest {
 
-    private ArrayList<String> books;
+    private ArrayList<Book> books;
+    private Book bookOne;
+    private Book bookTwo;
     private PrintStream printStream;
 
     @Before
     public void setup() {
-        books = new ArrayList<String>();
+        books = new ArrayList<>();
+        bookOne = new Book("BookOneName", "BookOneAuthor", 2000);
+        bookTwo = new Book("BookTwoName", "BookTwoAuthor", 1000);
         printStream = mock(PrintStream.class);
     }
 
     @Test
     public void shouldPrintBookListWithOneBook() {
-        books.add("one");
+        books.add(bookOne);
         Library library = new Library(printStream, books);
         library.listBooks();
-        verify(printStream).println("one");
+        verify(printStream).println("BookOneName");
     }
 
     @Test
@@ -41,11 +42,11 @@ public class LibraryTest {
 
     @Test
     public void shouldPrintBookListWithTwoBook() {
-        books.add("one");
-        books.add("two");
+        books.add(bookOne);
+        books.add(bookTwo);
         Library library = new Library(printStream, books);
         library.listBooks();
-        verify(printStream).println("one");
-        verify(printStream).println("two");
+        verify(printStream).println("BookOneName");
+        verify(printStream).println("BookTwoName");
     }
 }
