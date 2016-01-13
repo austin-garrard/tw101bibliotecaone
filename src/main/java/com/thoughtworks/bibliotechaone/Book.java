@@ -1,32 +1,24 @@
 package com.thoughtworks.bibliotechaone;
 
-/**
- * Created by adobley on 1/12/16.
- */
+import java.io.PrintStream;
+
 public class Book {
 
     private final String author;
 
     private final int yearPublished;
-
+    private PrintStream printStream;
+    private String sep = " | ";
     private final String name;
 
-    public int getYearPublished() {
-        return yearPublished;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAuthor() {
-
-        return author;
-    }
-
-    public Book(String name, String author, int yearPublished) {
+    public Book(String name, String author, int yearPublished, PrintStream printStream) {
         this.name = name;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.printStream = printStream;
+    }
+
+    public void print() {
+        printStream.println(name + sep + author + sep + yearPublished);
     }
 }
