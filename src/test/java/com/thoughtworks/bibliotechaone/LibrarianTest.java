@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class LibrarianTest {
 
@@ -17,17 +18,17 @@ public class LibrarianTest {
         menu = mock(Menu.class);
         library = mock(Library.class);
         librarian = new Librarian(menu, library);
-
-        librarian.run();
     }
 
     @Test
     public void shouldDisplayMenuWhenRun() {
+        librarian.run();
         verify(menu).display();
     }
 
     @Test
     public void shouldListBooksWhenRun() {
+        librarian.run();
         verify(library).listBooks();
     }
 }

@@ -1,6 +1,8 @@
 package com.thoughtworks.bibliotechaone;
 
 
+import java.io.IOException;
+
 public class Librarian {
 
     private Menu menu;
@@ -11,8 +13,22 @@ public class Librarian {
         this.library = library;
     }
 
-    public void run() {
+    public void run(){
         menu.display();
-        library.listBooks();
+
+        String input = "";
+
+        try {
+            input = menu.readOption();
+        }
+        catch(IOException exc) {
+
+        }
+
+        String option = menu.parseOption(input);
+
+        if(!option.equals("")) {
+            menu.execute(option);
+        }
     }
 }

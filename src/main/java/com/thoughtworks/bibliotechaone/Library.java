@@ -1,11 +1,11 @@
 package com.thoughtworks.bibliotechaone;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Library {
-    private ArrayList<Book> books;
+    private List<Book> books;
 
-    public Library(ArrayList<Book> books) {
+    public Library(List<Book> books) {
         this.books = books;
     }
 
