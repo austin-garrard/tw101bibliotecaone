@@ -3,7 +3,6 @@ package com.thoughtworks.bibliotechaone;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.print.PrinterGraphics;
 import java.io.PrintStream;
 
 import static org.mockito.Matchers.contains;

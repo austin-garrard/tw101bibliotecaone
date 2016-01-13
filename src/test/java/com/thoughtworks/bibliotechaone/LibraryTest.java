@@ -42,7 +42,6 @@ public class LibraryTest {
         books.add(bookOne);
         books.add(bookTwo);
         library.listBooks();
-        verify(bookOne).print();
         verify(bookTwo).print();
     }
 }
