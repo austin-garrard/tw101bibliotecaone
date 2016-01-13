@@ -2,17 +2,17 @@ package com.thoughtworks.bibliotechaone;
 
 
 public class Librarian {
-    
-    private GreetingPrinter greetingPrinter;
+
+    private Menu menu;
     private Library library;
 
-    public Librarian(GreetingPrinter greetingPrinter, Library library) {
-        this.greetingPrinter = greetingPrinter;
+    public Librarian(Menu menu, Library library) {
+        this.menu = menu;
         this.library = library;
     }
 
     public void run() {
-        greetingPrinter.printGreeting();
+        menu.display();
         library.listBooks();
     }
 }

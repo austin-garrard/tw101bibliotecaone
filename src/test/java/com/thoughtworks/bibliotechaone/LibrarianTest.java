@@ -3,28 +3,27 @@ package com.thoughtworks.bibliotechaone;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class LibrarianTest {
 
-    private GreetingPrinter greetingPrinter;
+    private Menu menu;
     private Library library;
     private Librarian librarian;
 
     @Before
     public void setup() {
-        greetingPrinter = mock(GreetingPrinter.class);
+        menu = mock(Menu.class);
         library = mock(Library.class);
-        librarian = new Librarian(greetingPrinter, library);
+        librarian = new Librarian(menu, library);
 
         librarian.run();
     }
 
     @Test
-    public void shouldGreetWhenRun() {
-        verify(greetingPrinter).printGreeting();
+    public void shouldDisplayMenuWhenRun() {
+        verify(menu).display();
     }
 
     @Test
